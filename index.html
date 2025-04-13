@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Telegram Compra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: url('https://r4.wallpaperflare.com/wallpaper/523/885/170/cats-croissants-presents-cake-chocolate-hd-wallpaper-0d3164c1b1f751d7ca8fe5b386589fb5.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header img {
+      height: 32px;
+    }
+
+    .download-btn {
+      background-color: #3390ec;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 60px);
+    }
+
+    .card {
+      background: white;
+      padding: 50px 70px;
+      border-radius: 20px;
+      box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      max-width: 350px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .verified {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      background: white;
+      border-radius: 50%;
+      padding: 2px;
+    }
+
+    .username {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #000;
+    }
+
+    .handle {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      font-size: 16px;
+      color: #333;
+      margin: 25px 0;
+      font-style: italic;
+    }
+
+    .redirect-btn {
+      background-color: #3390ec;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+    }
+
+    .redirect-btn:hover {
+      background-color: #0075c2;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      if (!localStorage.getItem("purchasePixelFired")) {
+        localStorage.setItem("purchasePixelFired", "true");
+        fbq('track', 'Purchase', {
+          value: 20.00,
+          currency: 'BRL'
+        });
+      }
+    };
+
+    function goToGroup() {
+      window.location.href = "https://t.me/+UsMM6FAo1e02ZTRh";
+    }
+  </script>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1005487101174659');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1005487101174659&ev=Purchase&cd[value]=20.00&cd[currency]=BRL&noscript=1"/>
+  </noscript>
+</head>
+<body>
+  <div class="header">
+    <img src="https://telegram.org/img/t_logo.png" alt="Telegram Logo">
+    <a class="download-btn" href="#">DOWNLOAD</a>
+  </div>
+  <div class="main">
+    <div class="card">
+      <div class="avatar-wrapper">
+        <img class="avatar" src="profile.jpg" alt="Edoarda">
+        <img class="verified" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified">
+      </div>
+      <div class="username">edoarda 😼</div>
+      <div class="handle">@edoardavipsbot</div>
+      <div class="message">🔥 Obrigada pela compra, amor... agora vem pro grupo e aproveita o conteúdo quentíssimo só pra você. 😘</div>
+      <button class="redirect-btn" onclick="goToGroup()">Acessar Grupo VIP</button>
+    </div>
+  </div>
+</body>
+</html>
