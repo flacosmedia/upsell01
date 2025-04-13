@@ -117,8 +117,8 @@
   </style>
   <script>
     window.onload = function () {
-      if (!localStorage.getItem("purchasePixelFired")) {
-        localStorage.setItem("purchasePixelFired", "true");
+      if (!localStorage.getItem("upsell")) {
+        localStorage.setItem("upsell", "true");
         fbq('track', 'Purchase', {
           value: 20.00,
           currency: 'BRL'
